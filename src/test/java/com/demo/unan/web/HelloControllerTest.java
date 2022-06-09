@@ -1,6 +1,5 @@
-package com.demo.unan;
+package com.demo.unan.web;
 
-import com.demo.unan.web.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
