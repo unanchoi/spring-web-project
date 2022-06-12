@@ -2,19 +2,20 @@ package com.demo.unan.services.posts;
 
 import com.demo.unan.domain.posts.Posts;
 import com.demo.unan.domain.posts.PostsRepository;
+import com.demo.unan.web.dto.PostsListResponseDto;
 import com.demo.unan.web.dto.PostsResponseDto;
 import com.demo.unan.web.dto.PostsSaveRequestsDto;
 import com.demo.unan.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
-import java.util.stream.Collector;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-public class PostService {
+public class PostsService {
     private final PostsRepository postsRepository;
 
     @Transactional
@@ -40,7 +41,7 @@ public class PostService {
     }
 
     @Transactional(readOnly = true)
-    public List<PostsListRsponseDto> findAllDesc() {
+    public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream()
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
