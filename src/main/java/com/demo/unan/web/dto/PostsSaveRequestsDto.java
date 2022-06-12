@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.swing.text.html.parser.Entity;
 
 @Getter
 @NoArgsConstructor
