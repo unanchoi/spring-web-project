@@ -1,5 +1,7 @@
 package com.demo.unan.config.auth;
 
+import com.demo.unan.config.auth.dto.OAuthAttributes;
+import com.demo.unan.config.auth.dto.SessionUser;
 import com.demo.unan.domain.user.User;
 import com.demo.unan.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -43,7 +45,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         return new DefaultOAuth2User(
                 Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
                 attributes.getAttributes(),
-                attributes.getNameAttributeKey());
+                attributes.getNameAttributesKey());
 
     }
 
